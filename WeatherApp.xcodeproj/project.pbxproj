@@ -44,6 +44,10 @@
 		D9C880671DCE235500B43097 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C880661DCE235500B43097 /* CoreDataHelper.swift */; };
 		D9C880691DCE235E00B43097 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C880681DCE235E00B43097 /* CoreDataStore.swift */; };
 		D9C8806F1DCE27F000B43097 /* WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9C8806D1DCE27F000B43097 /* WeatherApp.xcdatamodeld */; };
+		D9F4E4791DCE5CB100704F65 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F4E4781DCE5CB100704F65 /* Media.xcassets */; };
+		D9F4E4A61DCE5F3100704F65 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4A51DCE5F3100704F65 /* SplashViewController.swift */; };
+		D9F4E4A81DCE5FD600704F65 /* FadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4A71DCE5FD600704F65 /* FadeInSegue.swift */; };
+		D9F4E4AA1DCE692000704F65 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4A91DCE692000704F65 /* SegueHandlerType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,10 @@
 		D9C880661DCE235500B43097 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		D9C880681DCE235E00B43097 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		D9C8806E1DCE27F000B43097 /* WeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherApp.xcdatamodel; sourceTree = "<group>"; };
+		D9F4E4781DCE5CB100704F65 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		D9F4E4A51DCE5F3100704F65 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		D9F4E4A71DCE5FD600704F65 /* FadeInSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInSegue.swift; sourceTree = "<group>"; };
+		D9F4E4A91DCE692000704F65 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				D925CDAF1DCBB9B300D98A34 /* Communs */,
+				D9F4E4A41DCE5F1300704F65 /* SplashView */,
 				D925CDB11DCBB9B300D98A34 /* WeatherDetails */,
 				D925CDB51DCBB9B300D98A34 /* WeatherList */,
 			);
@@ -175,6 +184,7 @@
 				D9BA1C791DCD0C320080C093 /* Error */,
 				D9BA1C5F1DCBC1FF0080C093 /* JSONDecodable */,
 				D925CDB01DCBB9B300D98A34 /* TabbarView */,
+				D9F4E4A91DCE692000704F65 /* SegueHandlerType.swift */,
 			);
 			path = Communs;
 			sourceTree = "<group>";
@@ -266,6 +276,7 @@
 				D925CDBF1DCBBA1200D98A34 /* Main.storyboard */,
 				D925CDC11DCBBA1200D98A34 /* Info.plist */,
 				D9C8806D1DCE27F000B43097 /* WeatherApp.xcdatamodeld */,
+				D9F4E4781DCE5CB100704F65 /* Media.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -337,6 +348,7 @@
 				D9BA1C8D1DCD4E600080C093 /* NSDateFormatter+Helpers */,
 				D9BA1C711DCD081E0080C093 /* UIColor+Helpers */,
 				D928CA521DCE3161003E300B /* NSManagedObjectContext+Helpers.swift */,
+				D9F4E4A71DCE5FD600704F65 /* FadeInSegue.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -411,6 +423,14 @@
 				D928CA491DCE2F37003E300B /* CDWind.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D9F4E4A41DCE5F1300704F65 /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				D9F4E4A51DCE5F3100704F65 /* SplashViewController.swift */,
+			);
+			path = SplashView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +542,7 @@
 			files = (
 				D925CDC51DCBBA1200D98A34 /* Info.plist in Resources */,
 				D925CDC41DCBBA1200D98A34 /* Main.storyboard in Resources */,
+				D9F4E4791DCE5CB100704F65 /* Media.xcassets in Resources */,
 				D925CDC21DCBBA1200D98A34 /* Assets.xcassets in Resources */,
 				D925CDC31DCBBA1200D98A34 /* LaunchScreen.storyboard in Resources */,
 				D9BA1C651DCBC9D90080C093 /* TabbarView.xib in Resources */,
@@ -606,6 +627,7 @@
 				D9BA1C881DCD2A6A0080C093 /* WeatherIcon.swift in Sources */,
 				D9BA1C801DCD175F0080C093 /* Constants.swift in Sources */,
 				D928CA4E1DCE2F37003E300B /* CDWind+CoreDataProperties.swift in Sources */,
+				D9F4E4A61DCE5F3100704F65 /* SplashViewController.swift in Sources */,
 				D9C880671DCE235500B43097 /* CoreDataHelper.swift in Sources */,
 				D928CA531DCE3161003E300B /* NSManagedObjectContext+Helpers.swift in Sources */,
 				D9BA1C5E1DCBBCC30080C093 /* WeatherDaysListViewController.swift in Sources */,
@@ -624,6 +646,8 @@
 				D9BA1C781DCD0BD10080C093 /* OpenWeatherMapService.swift in Sources */,
 				D9BA1C8A1DCD2CCC0080C093 /* Wind.swift in Sources */,
 				D928CA4C1DCE2F37003E300B /* CDWeather+CoreDataProperties.swift in Sources */,
+				D9F4E4A81DCE5FD600704F65 /* FadeInSegue.swift in Sources */,
+				D9F4E4AA1DCE692000704F65 /* SegueHandlerType.swift in Sources */,
 				D928CA4D1DCE2F37003E300B /* CDWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

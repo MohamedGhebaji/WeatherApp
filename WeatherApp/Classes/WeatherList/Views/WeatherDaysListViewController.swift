@@ -11,7 +11,9 @@ import UIKit
 final class WeatherDaysListViewController: UIViewController {
     
     @IBOutlet private var tabbarView: TabbarView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     let openWeatherService = OpenWeatherMapService()
+    var weathers: [Weather]!
     var viewModel: WeatherDaysListViewModel?
     
     // MARK: - Life Cycle
@@ -20,19 +22,7 @@ final class WeatherDaysListViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupView()
-        openWeatherService.retrieveWeatherInfo(inCity: Constants.API.parisCityId) { (weathers, error) in
-            if error == nil {
-                self.viewModel = WeatherDaysListViewModel(weathers: weathers)
-                self.tabbarView.reloadData()
-            } else {
-                var weathersFromCoreData = [Weather]()
-                for cdWeather in CDWeather.findAll() {
-                    weathersFromCoreData.append(Weather(cdWeather: cdWeather))
-                }
-                self.viewModel = WeatherDaysListViewModel(weathers: weathersFromCoreData, shoudlSave: false)
-                self.tabbarView.reloadData()
-            }
-        }
+        navigationItem.titleView = UIImageView(image: UIImage(named: "ic_nav_bar_paris"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +47,8 @@ private extension WeatherDaysListViewController {
     func setupView() {
         self.tabbarView.dataSource = self
         self.tabbarView.delegate = self
+        viewModel = WeatherDaysListViewModel(weathers: weathers)
+        tabbarView.reloadData()
     }
 }
 

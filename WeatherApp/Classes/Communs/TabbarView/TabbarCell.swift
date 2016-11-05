@@ -37,6 +37,6 @@ final class TabbarCell: UICollectionViewCell {
      */
     func toogle(withState selected: Bool) {
         indicatorView.hidden = !selected
-        titleLabel.textColor = selected ? UIColor(hex: 0xEC008C) : UIColor(hex: 0xAEA79F)
+        titleLabel.textColor = selected ? UIColor(red: 7, green: 151, blue: 234) : UIColor(hex: 0xAEA79F)
     }
 }
