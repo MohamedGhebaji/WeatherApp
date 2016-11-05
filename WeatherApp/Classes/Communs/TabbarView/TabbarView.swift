@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabbarView: UIView {
+final class TabbarView: UIView {
     
     @IBOutlet private weak var tabbarCollectionView: UICollectionView!
     
@@ -34,6 +34,9 @@ class TabbarView: UIView {
     }
     
     // MARK: - Public Methods
+    /**
+     Reload the tabbar data (reload the collection view)
+     */
     func reloadData() {
         tabbarCollectionView?.reloadData()
     }
@@ -41,6 +44,10 @@ class TabbarView: UIView {
 
 // MARK: - Private Methods
 private extension TabbarView {
+    
+    /**
+     Prepare the tabbar view
+     */
     func commonInit() {
         let tabbarView = NSBundle.mainBundle().loadNibNamed(String(TabbarView), owner: self, options: nil).first as! UIView
         tabbarView.translatesAutoresizingMaskIntoConstraints = false
@@ -82,11 +89,31 @@ extension TabbarView: UICollectionViewDelegate {
 }
 
 protocol TabbarViewDataSource {
+    /**
+     Return the number of tabbar items
+     
+     - returns: The number of the tabbar items
+     */
     func numberOfItem() -> Int
+    
+    /**
+     Return the title of the tabbar item at index
+     
+     - parameter tabbarView: The tabbar instance
+     - parameter index:      The index of the tabbar item
+     
+     - returns: The title of the tabbar item
+     */
     func tabbarView(tabbarView: TabbarView, titleOfItemAtIndex index: Int) -> String
 }
 
 @objc protocol TabbarViewDelegate {
     optional
+    /**
+     Fire the selection action with the selected index
+     
+     - parameter tabbarView: The tabbar instance
+     - parameter index:      The selected index
+     */
     func tabbarView(tabbarView: TabbarView, didSelectItemAtIndex index: Int)
 }

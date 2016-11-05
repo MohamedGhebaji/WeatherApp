@@ -17,3 +17,12 @@ struct WeatherIcon: JSONDecodable {
         icon = json["icon"] as? String
     }
 }
+
+extension WeatherIcon {
+    init?(cdWeatherIcon: CDWeatherIcon?) {
+        guard let cdWeatherIcon = cdWeatherIcon else {
+            return nil
+        }
+        icon = cdWeatherIcon.icon
+    }
+}

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabbarCell: UICollectionViewCell {
+final class TabbarCell: UICollectionViewCell {
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var indicatorView: UIView!
@@ -20,10 +20,21 @@ class TabbarCell: UICollectionViewCell {
     }
     
     // MARK: - Public Methods
+    
+    /**
+     Configure the cell with the title value
+     
+     - parameter title: The title to show or nil
+     */
     func configure(withTitle title: String) {
         titleLabel.text = title
     }
     
+    /**
+     Toogle the cell status
+     
+     - parameter selected: true to show the selected state, false otherwise
+     */
     func toogle(withState selected: Bool) {
         indicatorView.hidden = !selected
         titleLabel.textColor = selected ? UIColor(hex: 0xEC008C) : UIColor(hex: 0xAEA79F)

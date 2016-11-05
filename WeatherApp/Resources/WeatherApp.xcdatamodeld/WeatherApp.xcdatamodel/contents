@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15G1108" minimumToolsVersion="Xcode 7.0">
+    <entity name="CDWeather" representedClassName=".CDWeather" syncable="YES">
+        <attribute name="clouds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dateTimeStamp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="grndLevel" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rain" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="seaLevel" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="temp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tempMax" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tempMin" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="weatherIcon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeatherIcon" inverseName="weather" inverseEntity="CDWeatherIcon" syncable="YES"/>
+        <relationship name="wind" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDWind" inverseName="weather" inverseEntity="CDWind" syncable="YES"/>
+    </entity>
+    <entity name="CDWeatherIcon" representedClassName=".CDWeatherIcon" syncable="YES">
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeather" inverseName="weatherIcon" inverseEntity="CDWeather" syncable="YES"/>
+    </entity>
+    <entity name="CDWind" representedClassName=".CDWind" syncable="YES">
+        <attribute name="deg" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeather" inverseName="wind" inverseEntity="CDWeather" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDWeather" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="CDWeatherIcon" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="CDWind" positionX="-36" positionY="9" width="128" height="90"/>
+    </elements>
+</model>

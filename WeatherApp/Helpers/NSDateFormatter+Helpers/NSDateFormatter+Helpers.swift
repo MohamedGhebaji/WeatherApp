@@ -8,6 +8,13 @@
 
 import Foundation
 extension NSDateFormatter {
+    /**
+     Instantiate NSDateFormatter with format
+     
+     - parameter format: The date format
+     
+     - returns: Instande of NSDateFormatter
+     */
     convenience init(format: String) {
         self.init()
         dateFormat = format

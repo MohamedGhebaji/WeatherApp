@@ -19,3 +19,13 @@ struct Wind: JSONDecodable {
         deg = json["deg"] as? Double
     }
 }
+
+extension Wind {
+    init?(cdWind: CDWind?) {
+        guard let cdWind = cdWind else {
+            return nil
+        }
+        speed = cdWind.speed
+        deg = cdWind.deg
+    }
+}

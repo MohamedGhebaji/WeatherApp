@@ -14,7 +14,27 @@ struct WeatherDaysListViewModel {
     private(set) var tabbarItems = [String?]()
     private(set) var daysWeatherList = [Weather]()
     
-    init(weathers: [Weather]) {
+    /**
+     Instantiate the view model with the weather list
+     
+     - parameter weathers: The list of the weather returned from the API
+     
+     - returns: Instance of WeatherDaysListViewModel
+     */
+    init(weathers: [Weather], shoudlSave: Bool = true) {
+        
+        if shoudlSave {
+            CDWeather.deleteAll()
+            for weather in weathers {
+                let cdWeather: CDWeather = backgroundContext.insertObject()
+                cdWeather.map(with: weather)
+                appDelegate.coreDataHelper.saveContextWithCompletion({ (error) in
+                    if error != nil {
+                        print("error when saving the weathers \(error)")
+                    }
+                })
+            }
+        }
         let firstDayWeathers = weathersByDate(NSDate(), fromWeathers: weathers)
         if firstDayWeathers.count > 0 {
             daysWeatherList.append(firstDayWeathers[0])
@@ -42,6 +62,14 @@ struct WeatherDaysListViewModel {
 }
 
 private extension WeatherDaysListViewModel {
+    
+    /**
+     Convert the timestamp to user frindly text
+     
+     - parameter timeStamp: The timeStamp to convert
+     
+     - returns: String date format (Lundi,2sep.)
+     */
     func stringFromTimeStamp(timeStamp: NSTimeInterval?) -> String? {
         let dateFormatter = NSDateFormatter(format: "EEEE, d MMM")
         guard let timeStamp = timeStamp else {
@@ -51,6 +79,14 @@ private extension WeatherDaysListViewModel {
         return dateFormatter.stringFromDate(date)
     }
     
+    /**
+     Filter the weather list to return the weathers with the same date passed in params
+     
+     - parameter date:     The date to use in the filter action
+     - parameter weathers: The list of all weathers
+     
+     - returns: An array of weather
+     */
     func weathersByDate(date: NSDate, fromWeathers weathers: [Weather]) -> [Weather] {
         return weathers.filter { (weather) -> Bool in
             let dateFormatter = NSDateFormatter(format: "MM/dd/yyyy")

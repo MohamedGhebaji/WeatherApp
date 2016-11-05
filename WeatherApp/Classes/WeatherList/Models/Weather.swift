@@ -50,3 +50,20 @@ struct Weather: JSONDecodable {
         rain = (json["rain"] as? JSON)?["3h"] as? Double
     }
 }
+
+extension Weather {
+    init(cdWeather: CDWeather) {
+        dateTimeStamp = cdWeather.dateTimeStamp
+        temp = cdWeather.temp
+        tempMin = cdWeather.tempMin
+        tempMax = cdWeather.tempMax
+        pressure = cdWeather.pressure
+        seaLevel = cdWeather.seaLevel
+        grndLevel = cdWeather.grndLevel
+        humidity = cdWeather.humidity
+        clouds = Int(cdWeather.clouds)
+        rain = cdWeather.rain
+        weatherIcon = WeatherIcon(cdWeatherIcon: cdWeather.weatherIcon)
+        wind = Wind(cdWind: cdWeather.wind)
+    }
+}

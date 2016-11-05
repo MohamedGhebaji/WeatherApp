@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     struct API {
@@ -15,3 +16,7 @@ struct Constants {
         static let parisCityId = "6455259"
     }
 }
+
+let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+let backgroundContext = appDelegate.coreDataHelper.backgroundContext!
+let mainQueuContext = appDelegate.coreDataHelper.managedObjectContext
