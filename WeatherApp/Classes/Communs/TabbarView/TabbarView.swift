@@ -19,16 +19,19 @@ final class TabbarView: UIView {
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        //setup the view
         commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        //setup the view
         commonInit()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //register the tabbar item cell
         tabbarCollectionView.registerNib(UINib(nibName: String(TabbarCell), bundle: nil), forCellWithReuseIdentifier: String(TabbarCell))
         
     }
@@ -38,6 +41,7 @@ final class TabbarView: UIView {
      Reload the tabbar data (reload the collection view)
      */
     func reloadData() {
+        //reload the collection view
         tabbarCollectionView?.reloadData()
     }
 }
@@ -49,10 +53,15 @@ private extension TabbarView {
      Prepare the tabbar view
      */
     func commonInit() {
+        //load the TabbarView view
         let tabbarView = NSBundle.mainBundle().loadNibNamed(String(TabbarView), owner: self, options: nil).first as! UIView
+        //set the translates autoresizing mask to no
         tabbarView.translatesAutoresizingMaskIntoConstraints = false
+        //add it to self
         addSubview(tabbarView)
+        //create and add the h constraint
         let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[tabbarView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["tabbarView":tabbarView])
+        //create and add the v constraint
         let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[tabbarView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["tabbarView":tabbarView])
         addConstraints(hConstraints)
         addConstraints(vConstraints)
@@ -63,27 +72,37 @@ private extension TabbarView {
 extension TabbarView: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //return the number of items or 0
         return dataSource?.numberOfItem() ?? 0;
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        //dequeue the tabbar item cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(TabbarCell), forIndexPath: indexPath) as! TabbarCell
+        //configure the cell with the title to show
         cell.configure(withTitle: dataSource?.tabbarView(self, titleOfItemAtIndex: indexPath.item) ?? "")
+        //toogle the cell state, selected or NO
         cell.toogle(withState: selectedIndexPath != nil ? (indexPath == selectedIndexPath) : (indexPath.item == 0))
+        //return the cell
         return cell
     }
 }
 // MARK: - UICollectionViewDelegateFlowLayout
 extension TabbarView: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        //return the size of the cell
         return CGSize(width: 150, height: CGRectGetHeight(collectionView.frame))
     }
 }
 // MARK: - UICollectionViewDelegate
 extension TabbarView: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //save the selected index path
         selectedIndexPath = indexPath
+        //relaod the collection view : not perfect
+        //TODO : reload only the selected index path
         collectionView.reloadData()
+        //fire the selection delegate with the tabbar object and the selected index
         delegate?.tabbarView?(self, didSelectItemAtIndex: indexPath.item)
     }
 }

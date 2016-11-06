@@ -14,7 +14,8 @@ import CoreData
 
 extension CDWeatherIcon {
 
-    @NSManaged internal var icon: String?
-    @NSManaged internal var weather: CDWeather?
+    @NSManaged var icon: String?
+    @NSManaged var iconDescription: String?
+    @NSManaged var weather: CDWeather?
 
 }

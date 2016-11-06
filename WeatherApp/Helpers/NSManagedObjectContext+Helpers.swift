@@ -16,9 +16,11 @@ extension NSManagedObjectContext {
      - returns: The instantiated NSManagedObject
      */
     func insertObject<A:NSManagedObject where A:ManagedObjectType>() -> A {
+        //insert new managed object and cast it to the A type
         guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A else {
             fatalError("Enity \(A.entityName) does not correspond to \(A.self)")
         }
+        //return the A object
         return obj
     }
 }

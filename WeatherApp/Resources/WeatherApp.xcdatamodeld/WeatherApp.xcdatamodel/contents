@@ -16,6 +16,7 @@
     </entity>
     <entity name="CDWeatherIcon" representedClassName=".CDWeatherIcon" syncable="YES">
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconDescription" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDWeather" inverseName="weatherIcon" inverseEntity="CDWeather" syncable="YES"/>
     </entity>
     <entity name="CDWind" representedClassName=".CDWind" syncable="YES">
@@ -25,7 +26,7 @@
     </entity>
     <elements>
         <element name="CDWeather" positionX="-63" positionY="-18" width="128" height="225"/>
-        <element name="CDWeatherIcon" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="CDWeatherIcon" positionX="-54" positionY="-9" width="128" height="90"/>
         <element name="CDWind" positionX="-36" positionY="9" width="128" height="90"/>
     </elements>
 </model>

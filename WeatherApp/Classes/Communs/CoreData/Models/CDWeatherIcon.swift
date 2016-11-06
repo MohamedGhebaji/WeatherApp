@@ -21,6 +21,7 @@ class CDWeatherIcon: NSManagedObject, ManagedObjectType {
      */
     func map(with weatherIcon: WeatherIcon, cdWeather: CDWeather) {
         icon = weatherIcon.icon
+        iconDescription = weatherIcon.iconDescription
         weather = cdWeather
     }
 }

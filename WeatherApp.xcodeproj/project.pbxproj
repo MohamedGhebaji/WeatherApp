@@ -48,6 +48,11 @@
 		D9F4E4A61DCE5F3100704F65 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4A51DCE5F3100704F65 /* SplashViewController.swift */; };
 		D9F4E4A81DCE5FD600704F65 /* FadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4A71DCE5FD600704F65 /* FadeInSegue.swift */; };
 		D9F4E4AA1DCE692000704F65 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4A91DCE692000704F65 /* SegueHandlerType.swift */; };
+		D9F4E4AF1DCE8B1200704F65 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F4E4AE1DCE8B1200704F65 /* Haneke.framework */; };
+		D9F4E4B11DCE8FF800704F65 /* TemperatureConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4B01DCE8FF800704F65 /* TemperatureConverter.swift */; };
+		D9F4E4B41DCE958B00704F65 /* WeatherListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4B31DCE958B00704F65 /* WeatherListCell.swift */; };
+		D9F4E4B61DCF384A00704F65 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4B51DCF384A00704F65 /* Box.swift */; };
+		D9F4E4B81DCF395800704F65 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4E4B71DCF395800704F65 /* WeatherDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +122,11 @@
 		D9F4E4A51DCE5F3100704F65 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		D9F4E4A71DCE5FD600704F65 /* FadeInSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInSegue.swift; sourceTree = "<group>"; };
 		D9F4E4A91DCE692000704F65 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
+		D9F4E4AE1DCE8B1200704F65 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = "Pods/../build/Debug-iphoneos/Haneke.framework"; sourceTree = "<group>"; };
+		D9F4E4B01DCE8FF800704F65 /* TemperatureConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
+		D9F4E4B31DCE958B00704F65 /* WeatherListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherListCell.swift; sourceTree = "<group>"; };
+		D9F4E4B51DCF384A00704F65 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		D9F4E4B71DCF395800704F65 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F4E4AF1DCE8B1200704F65 /* Haneke.framework in Frameworks */,
 				D9BA1C841DCD18F50080C093 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +160,7 @@
 		9459AC3F4DBD91B53495FE14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9F4E4AE1DCE8B1200704F65 /* Haneke.framework */,
 				D9BA1C831DCD18F50080C093 /* Alamofire.framework */,
 				D9BA1C811DCD18400080C093 /* Alamofire.framework */,
 				48E8D477AF13CFB953C35AE1 /* Pods_WeatherAppTests.framework */,
@@ -220,6 +232,7 @@
 		D925CDB31DCBB9B300D98A34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D9F4E4B71DCF395800704F65 /* WeatherDetailsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +276,7 @@
 		D925CDB81DCBB9B300D98A34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D9F4E4B21DCE957400704F65 /* Cells */,
 				D9BA1C5D1DCBBCC30080C093 /* WeatherDaysListViewController.swift */,
 			);
 			path = Views;
@@ -349,6 +363,8 @@
 				D9BA1C711DCD081E0080C093 /* UIColor+Helpers */,
 				D928CA521DCE3161003E300B /* NSManagedObjectContext+Helpers.swift */,
 				D9F4E4A71DCE5FD600704F65 /* FadeInSegue.swift */,
+				D9F4E4B01DCE8FF800704F65 /* TemperatureConverter.swift */,
+				D9F4E4B51DCF384A00704F65 /* Box.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -431,6 +447,14 @@
 				D9F4E4A51DCE5F3100704F65 /* SplashViewController.swift */,
 			);
 			path = SplashView;
+			sourceTree = "<group>";
+		};
+		D9F4E4B21DCE957400704F65 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D9F4E4B31DCE958B00704F65 /* WeatherListCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -629,6 +653,8 @@
 				D928CA4E1DCE2F37003E300B /* CDWind+CoreDataProperties.swift in Sources */,
 				D9F4E4A61DCE5F3100704F65 /* SplashViewController.swift in Sources */,
 				D9C880671DCE235500B43097 /* CoreDataHelper.swift in Sources */,
+				D9F4E4B81DCF395800704F65 /* WeatherDetailsViewController.swift in Sources */,
+				D9F4E4B11DCE8FF800704F65 /* TemperatureConverter.swift in Sources */,
 				D928CA531DCE3161003E300B /* NSManagedObjectContext+Helpers.swift in Sources */,
 				D9BA1C5E1DCBBCC30080C093 /* WeatherDaysListViewController.swift in Sources */,
 				D9BA1C631DCBC9CF0080C093 /* TabbarView.swift in Sources */,
@@ -645,7 +671,9 @@
 				D9BA1C7B1DCD0C380080C093 /* Error.swift in Sources */,
 				D9BA1C781DCD0BD10080C093 /* OpenWeatherMapService.swift in Sources */,
 				D9BA1C8A1DCD2CCC0080C093 /* Wind.swift in Sources */,
+				D9F4E4B61DCF384A00704F65 /* Box.swift in Sources */,
 				D928CA4C1DCE2F37003E300B /* CDWeather+CoreDataProperties.swift in Sources */,
+				D9F4E4B41DCE958B00704F65 /* WeatherListCell.swift in Sources */,
 				D9F4E4A81DCE5FD600704F65 /* FadeInSegue.swift in Sources */,
 				D9F4E4AA1DCE692000704F65 /* SegueHandlerType.swift in Sources */,
 				D928CA4D1DCE2F37003E300B /* CDWeather.swift in Sources */,

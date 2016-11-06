@@ -23,7 +23,23 @@ struct Weather: JSONDecodable {
     let clouds: Int?
     let wind: Wind?
     let rain: Double?
-    
+    var weatherTime: String? {
+        let dateFormatter = NSDateFormatter(format: "H:mm a")
+        guard let dateTimeStamp = dateTimeStamp else {
+            return nil
+        }
+        let date = NSDate(timeIntervalSince1970: dateTimeStamp)
+        return dateFormatter.stringFromDate(date)
+    }
+    /**
+     Instantiate Weather with the JSON type
+     
+     - parameter json: The JSON type
+     
+     - throws: Throw error in case of json passed is nil, or when mandotary arttribute is missiong
+     
+     - returns: Instance of Weather or nil in case of throw
+     */
     init(json: JSON?) throws {
         guard let json = json else {
             throw JSONSerialisationError.JSONIsNil
@@ -52,6 +68,13 @@ struct Weather: JSONDecodable {
 }
 
 extension Weather {
+    /**
+     Instantiate the Weather struct from the weather core data object
+     
+     - parameter cdWeather: The core data weather instance
+     
+     - returns: Instance of Weather
+     */
     init(cdWeather: CDWeather) {
         dateTimeStamp = cdWeather.dateTimeStamp
         temp = cdWeather.temp

@@ -27,6 +27,7 @@ final class TabbarCell: UICollectionViewCell {
      - parameter title: The title to show or nil
      */
     func configure(withTitle title: String) {
+        //set the title
         titleLabel.text = title
     }
     
@@ -36,7 +37,9 @@ final class TabbarCell: UICollectionViewCell {
      - parameter selected: true to show the selected state, false otherwise
      */
     func toogle(withState selected: Bool) {
+        //show the indicator if the cell is selected or hide it otherwise
         indicatorView.hidden = !selected
+        //change the title label 's text color
         titleLabel.textColor = selected ? UIColor(red: 7, green: 151, blue: 234) : UIColor(hex: 0xAEA79F)
     }
 }

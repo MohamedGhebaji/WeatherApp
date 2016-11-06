@@ -1,10 +1,13 @@
 PODS:
   - Alamofire (3.5.0)
+  - HanekeSwift (0.10.1)
 
 DEPENDENCIES:
   - Alamofire (= 3.5.0)
+  - HanekeSwift
 
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
 
 COCOAPODS: 0.39.0

@@ -49,9 +49,9 @@ class CDWeather: NSManagedObject, ManagedObjectType {
      */
     static func deleteAll() {
         do {
-            let savedWeathers = try mainQueuContext.executeFetchRequest(CDWeather.sortedFetchRequest) as! [CDWeather]
+            let savedWeathers = try backgroundContext.executeFetchRequest(CDWeather.sortedFetchRequest) as! [CDWeather]
             for weather in savedWeathers {
-                mainQueuContext.deleteObject(weather)
+                backgroundContext.deleteObject(weather)
             }
         } catch let error as NSError{
             print("enable to delete weather objects \(error))")
@@ -60,7 +60,7 @@ class CDWeather: NSManagedObject, ManagedObjectType {
     
     static func findAll() -> [CDWeather] {
         do {
-            return try mainQueuContext.executeFetchRequest(CDWeather.sortedFetchRequest) as! [CDWeather]
+            return try backgroundContext.executeFetchRequest(CDWeather.sortedFetchRequest) as! [CDWeather]
         } catch let error as NSError {
             print("enable to find weather objects \(error))")
             return []

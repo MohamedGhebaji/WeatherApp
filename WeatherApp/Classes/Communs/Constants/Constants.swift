@@ -12,6 +12,7 @@ import UIKit
 struct Constants {
     struct API {
         static let baseURL = "http://api.openweathermap.org/data/2.5/forecast"
+        static let iconBaseURL = "http://openweathermap.org/img/w/"
         static let openWeatherMapAPIKey = "cbfc9ceb3c7ce093c63eb96f0170be7b"
         static let parisCityId = "6455259"
     }
