@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherIcon: JSONDecodable {
+public struct WeatherIcon: JSONDecodable {
 
     let icon: String?
     let iconDescription: String?

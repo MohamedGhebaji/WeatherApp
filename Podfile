@@ -5,12 +5,13 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'WeatherApp' do
-
+    pod 'Alamofire', '3.5.0'
+    pod 'HanekeSwift', '0.10.1'
 end
 
 target 'WeatherAppTests' do
-    pod 'Alamofire', '3.5.0'
-    pod 'HanekeSwift', '0.10.1'
+    pod 'Quick', '0.9.3'
+    pod 'Nimble', '4.1.0'
 end
 
 target 'WeatherAppUITests' do

@@ -14,7 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Nimble.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WeatherApp.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WeatherAppTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00618F83E6AA40B4863A73949493531F</key>
+		<key>13AD47D75D77E1AA697815E3DBC50CE8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40FF1C77152F384080A1A02E90A36DA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -33,6 +53,16 @@
 			<true/>
 		</dict>
 		<key>7DDF79495F24B309AF089ACC99FC1151</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A8EBD581E8200E8862C118574038AA7D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1128F4CACE70FD58C8C257BD1EA4E33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
